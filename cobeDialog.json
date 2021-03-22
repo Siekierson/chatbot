@@ -1,0 +1,31 @@
+[
+  {
+    "message": [
+      "Cześć",
+      "Nazywam się Cobe. Jestem tu po to abyś odzyskał wewnętrzną równowagę. Powiedz mi jak masz na imię."
+    ],
+    "answers": "open"
+  },
+  {
+    "message": ["Miło mi cię poznać.", "Jak się dzisiaj miewasz? "],
+    "answers": "open"
+  },
+  {
+    "message": ["Mam nadzieję, że dzięki naszym rozmowom osiągniesz zadowolenie i satysfakcję ze swojego życia.","Wspólnie postaramy się dowiedzieć gdzie znajduje się źródło twoich problemów, a następnie poszukamy rozwiązania.","Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?"],
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jaki jest twój dzisiejszy poziom energii?",
+    "answers": ["Czuję się dobrze", "Chyba jest OK", "Trochę niski"]
+  },
+  {
+    "message": "Opowiedz mi o tym.",
+    "answers": "open"
+  }
+]
