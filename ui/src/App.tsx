@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Conversation from "./components/Conversation";
+import Input from "./components/Inupt";
+import styled from "styled-components";
+import firstTime from "./functions/firstTime";
 
+const Wrapper = styled.div`
+  padding: 5% 10%;
+`;
 function App() {
+  const [conversation, setConversation] = useState([]);
+  const [userData, setUserData] = useState(false);
+  // const handleUserMess = (mess: string) => {
+  //   setConversation([]);
+  // };
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (!token) firstTime();
+  }, [setConversation]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Conversation data={conversation} />
+      {/* <Input handleMess={handleUserMess} /> */}
+    </Wrapper>
   );
 }
 

@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Wildberry", sans-serif;
+}
+body {
+  width: 100%;
+  heigth: 100%;
+  background-color: rgb(96 47 129);
+}
