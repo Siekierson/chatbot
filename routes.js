@@ -25,7 +25,7 @@ router.route("/register").post((req, res) => {
   user
     .save()
     .then(({ username, password, _id }) =>
-      res.json({ username, password, _id })
+      res.json({ username, password, id: _id })
     )
     .catch((err) => res.status(400).json("Error: " + err));
 });
@@ -56,7 +56,7 @@ router.route("/create-session").post(async (req, res) => {
   const session = new Session({ userId: id, progress: 0, messages: [] });
   session
     .save()
-    .then(({ id }) => res.json({ id }))
+    .then(({ userId }) => res.json({ id: userId }))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
