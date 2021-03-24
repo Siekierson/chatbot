@@ -115,7 +115,7 @@ Zwraca listę wiadomości wewnątrz sesji. Parametr `after` pozwala na wyświetl
 ```http
 GET /messages/?id=4&after=2
 
-Authorization: Token 4d550820aa3337db8544021b11a2710b19d43408
+Authorization: Bearer 4d550820aa3337db8544021b11a2710b19d43408
 ```
 
 Zwraca false gdy nie ma wgl wiadomości
@@ -148,7 +148,7 @@ Wysyła wiadomość i zwraca listę kolejnych odpowiedzi jeżeli wszystko się p
 ```http
 GET /send-message/
 
-Authorization: Token 4d550820aa3337db8544021b11a2710b19d43408
+Authorization: Bearer 4d550820aa3337db8544021b11a2710b19d43408
 ```
 
 ```json
