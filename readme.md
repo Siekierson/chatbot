@@ -2,7 +2,7 @@
 
 ## Jak wystartować projekt?
 
-Musisz mieć pobranego Node.js (). Jeżeli masz to wpisujesz w terminalu:
+Musisz mieć pobranego globalnie [Node.js](https://nodejs.org/dist/v14.16.0/node-v14.16.0-x64.msi). Jeżeli masz to wpisujesz w terminalu:
 
 ```terminal
 node index
