@@ -15,7 +15,6 @@ function App() {
   const handleUserMess = async (message: string) => {
     const id = localStorage.getItem("api-id");
     const response = await sendMessage(id, message);
-    console.log(response);
     setAnswers(response.answers);
     setConversation((prev: any) => [
       ...prev,
@@ -35,7 +34,7 @@ function App() {
       {conversation.length !== 0 ? (
         <Conversation data={conversation} />
       ) : (
-        "brak"
+        "ładowanie"
       )}
       <Input answers={answers} handleMess={handleUserMess} />
     </Wrapper>
