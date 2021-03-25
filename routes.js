@@ -9,12 +9,23 @@ let cobeDialogFile = editJsonFile("./cobeDialog.json");
 
 const cobeDialog = cobeDialogFile.get();
 
-function checkToken(req, res) {
-  if (req.headers.authorization.length !== 276) return res.status(403).end();
-}
+const env = process.env.REGISTRATION_SECRET;
+
+const authenticateJWT = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+
+  if (authHeader) {
+    const token = authHeader.split(" ")[1];
+    jwt.verify(token, env, (err, user) => {
+      // if (err) return res.status(403).end();
+      next();
+    });
+  } else {
+    res.sendStatus(401);
+  }
+};
 
 router.route("/register").post((req, res) => {
-  const env = process.env.REGISTRATION_SECRET;
   if (env !== req.body.secret) return res.status(403).end();
   const username = uuidv4();
   const password = randomstring.generate({
@@ -32,11 +43,7 @@ router.route("/register").post((req, res) => {
 
 router.route("/api-token-auth").post((req, res) => {
   const { username, password } = req.body;
-  const token = jwt.sign(
-    { username, password },
-    process.env.REGISTRATION_SECRET,
-    { expiresIn: 1200 }
-  );
+  const token = jwt.sign({ username, password }, env, { expiresIn: 1200 });
   User.updateOne({ username: username } && { password: password }, {
     $set: { token },
   })
@@ -46,8 +53,7 @@ router.route("/api-token-auth").post((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/create-session").post(async (req, res) => {
-  checkToken(req, res);
+router.route("/create-session").post(authenticateJWT, async (req, res) => {
   const token = req.headers.authorization.replace("Bearer ", "");
   let id = false;
   await User.findOne({ token })
@@ -60,16 +66,14 @@ router.route("/create-session").post(async (req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/view-session").get((req, res) => {
-  checkToken(req, res);
+router.route("/view-session").get(authenticateJWT, (req, res) => {
   const id = req.query.id;
   Session.findOne({ userId: id })
     .then((item) => res.json(item))
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/messages").get((req, res) => {
-  checkToken(req, res);
+router.route("/messages").get(authenticateJWT, (req, res) => {
   const id = req.query.id;
   const after = Number(req.query.after);
   Session.findOne({ userId: id })
@@ -80,8 +84,7 @@ router.route("/messages").get((req, res) => {
     .catch((err) => res.status(400).json("Error: " + err));
 });
 
-router.route("/send-message").post(async (req, res) => {
-  checkToken(req, res);
+router.route("/send-message").post(authenticateJWT, async (req, res) => {
   const { id, message } = req.body;
   const progress = await Session.findOne({ userId: id })
     .then(({ progress }) => progress)

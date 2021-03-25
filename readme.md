@@ -1,19 +1,5 @@
 # Dokumentacja API
 
-## Jak wystartować projekt?
-
-Musisz mieć pobranego globalnie [Node.js](https://nodejs.org/dist/v14.16.0/node-v14.16.0-x64.msi). Jeżeli masz to wpisujesz w terminalu:
-
-```terminal
-node index
-```
-
-serwer uruchamia się domyślnie na porcie 5000, można zmienić wpisując do pliku .env:(2323 dowolny numer portu)
-
-```dotenv
-PORT=2323
-```
-
 ## Baza danych
 
 Postawiona jest baza danych w MongoDB. Można postawić własną, wystarczy tylko zmienić ATLAS_URI w pliku .env
