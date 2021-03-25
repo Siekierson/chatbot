@@ -9,16 +9,24 @@ const Wrapper = styled.div`
 `;
 interface MessageProps {
   isCobe: boolean;
-  content: string;
+  content: string | string[];
 }
 function Conversation({ data }: any) {
   return (
-    <Wrapper id="scroll">
-      {data.map(({ isCobe, content }: MessageProps) => (
-        <Message key={`${Math.random()}`} cobe={isCobe}>
-          {content}
-        </Message>
-      ))}
+    <Wrapper>
+      {data.map(({ isCobe, content }: MessageProps) =>
+        typeof content === "object" ? (
+          content.map((item: string) => (
+            <Message key={`${Math.random()}`} cobe={true}>
+              {item}
+            </Message>
+          ))
+        ) : (
+          <Message key={`${Math.random()}`} cobe={isCobe}>
+            {content}
+          </Message>
+        )
+      )}
     </Wrapper>
   );
 }

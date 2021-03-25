@@ -11,10 +11,12 @@ const Wrapper = styled.div`
 `;
 function App() {
   const [conversation, setConversation] = useState<any>([]);
+  const [answers, setAnswers] = useState<string | string[]>("");
   const handleUserMess = async (message: string) => {
     const id = localStorage.getItem("api-id");
     const response = await sendMessage(id, message);
     console.log(response);
+    setAnswers(response.answers);
     setConversation((prev: any) => [
       ...prev,
       { isCobe: false, content: message },
@@ -35,7 +37,7 @@ function App() {
       ) : (
         "brak"
       )}
-      <Input handleMess={handleUserMess} />
+      <Input answers={answers} handleMess={handleUserMess} />
     </Wrapper>
   );
 }
