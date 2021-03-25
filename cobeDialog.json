@@ -11,7 +11,11 @@
     "answers": "open"
   },
   {
-    "message": ["Mam nadzieję, że dzięki naszym rozmowom osiągniesz zadowolenie i satysfakcję ze swojego życia.","Wspólnie postaramy się dowiedzieć gdzie znajduje się źródło twoich problemów, a następnie poszukamy rozwiązania.","Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?"],
+    "message": [
+      "Mam nadzieję, że dzięki naszym rozmowom osiągniesz zadowolenie i satysfakcję ze swojego życia.",
+      "Wspólnie postaramy się dowiedzieć gdzie znajduje się źródło twoich problemów, a następnie poszukamy rozwiązania.",
+      "Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?"
+    ],
     "answers": [
       "nigdy",
       "prawie nigdy",
@@ -27,5 +31,109 @@
   {
     "message": "Opowiedz mi o tym.",
     "answers": "open"
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca czułeś/aś, że ważne sprawy w twoim życiu wymykają ci się spod kontroli?",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": [
+      "Gdybym mógł chciałbym cię przytulić.",
+      " Opowiedz mi o wszystkim co cię trapi."
+    ],
+    "answers": "open"
+  },
+  {
+    "message": "Jak długo źle się czujesz?",
+    "answers": ["mniej niż tydzień", "tydzień", "dwa tygodnie", "dłużej"]
+  },
+  {
+    "message": [
+      "Mam nadzieję, że wkrótce poczujesz się lepiej.",
+      "Jak często w ciągu ostatniego miesiąca odczuwałeś/aś zdenerwowanie i napięcie?"
+    ],
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca byłeś/aś przekonany/a, że jesteś w stanie poradzić sobie z problemami osobistymi?",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca czułeś/aś, że sprawy układają się po twojej myśli? ",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca stwierdzałeś/aś, że nie radzisz sobie ze wszystkimi obowiązkami? ",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca potrafiłeś/aś opanować swoje rozdrażnienie?",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca czułeś/aś, że wszystko ci wychodzi? ",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca złościłeś/aś się, ponieważ nie miałeś/aś wpływu na to co się zdarzyło? ",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
+  },
+  {
+    "message": "Jak często w ciągu ostatniego miesiąca czułeś/aś, że nie możesz przezwyciężyć narastają cych trudności? ",
+    "answers": [
+      "nigdy",
+      "prawie nigdy",
+      "czasem",
+      "dość często",
+      "bardzo często"
+    ]
   }
 ]
